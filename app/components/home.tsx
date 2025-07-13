@@ -1,19 +1,17 @@
 import Image from "next/image";
+import "./styles/home.scss";
 
 export const Home = () => {
   return (
-    <div className="flex flex-row justify-start items-start h-[calc(100vh-7rem)] w-full">
+    <section className="flex flex-row justify-start items-start h-[calc(100vh-7rem)] w-full relative bg-[url('/home_bg.svg')] bg-cover bg-center bg-no-repeat">
       <div className="flex justify-center items-center w-1/2 h-full">
         <Image
           aria-hidden
-          src="/dp.jpg"
+          src="/about_dp.png"
           alt="profile pic"
           height={700}
           width={500}
-          className="h-full w-full object-cover rounded-lg pr-8"
-          // fill={true}
-          // style={{ objectFit: "contain" }}
-          // sizes="(max-height: 768px) 100vh, 33vh"
+          className="h-full object-cover rounded-lg pr-8"
         />
       </div>
       <div className="flex w-1/2">
@@ -29,25 +27,18 @@ export const Home = () => {
             responsive, and user-friendly applications. I love turning ideas
             into reality with code.
           </p>
-          <div className="flex gap-4">
-            {/*<Image*/}
-            {/*  aria-hidden*/}
-            {/*  src="/contact1.png"*/}
-            {/*  alt="contact icon"*/}
-            {/*  height={70}*/}
-            {/*  width={70}*/}
-            {/*  // className="h-full w-full object-cover rounded-lg pr-8"*/}
-            {/*  // fill={true}*/}
-            {/*  // style={{ objectFit: "contain" }}*/}
-            {/*  // sizes="(max-height: 768px) 100vh, 33vh"*/}
-            {/*/>*/}
-            {/*<h3 className="text-lg">Contact me</h3>*/}
-            <button className="rounded-xl bg-accent py-3 px-8 text-white">
-              Say Hello
-            </button>
+          <div className="flex gap-4 justify-between">
+            <div>
+              <button className="rounded-xl bg-accent py-3 px-8 text-white">
+                Say Hello
+              </button>
+            </div>
+            <div className="absolute bottom-8 right-2">
+              <div className="scrolldown"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
