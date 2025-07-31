@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SectionHeading } from "@/app/components/sectionHeading";
 
 export const Skills = () => {
   const skills = [
@@ -86,13 +87,11 @@ export const Skills = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex items-center gap-4 mb-4">
-        <span className="w-7 border-2 border-accent"></span>
-        <span className="text-xl">My Skills</span>
-      </div>
-      <h1 className="text-5xl font-bold">
-        Technical <span className="text-accent">Skills</span>
-      </h1>
+      <SectionHeading
+        headingPrimary="Technical"
+        headingAccent="Skills"
+        subHeading="My skills"
+      />
 
       <div className="flex flex-col gap-8 mt-10">
         {rows.map((row, rowIndex) => (

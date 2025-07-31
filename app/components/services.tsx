@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SectionHeading } from "@/app/components/sectionHeading";
 
 export const Services = () => {
   const data = [
@@ -23,13 +24,11 @@ export const Services = () => {
   ];
   return (
     <div className="flex flex-col">
-      <div className="flex items-center gap-4 mb-4">
-        <span className="w-7 border-2 border-accent"></span>
-        <span className="text-xl">What I can do</span>
-      </div>
-      <h1 className="text-5xl font-bold">
-        My <span className="text-accent">Expertise</span>
-      </h1>
+      <SectionHeading
+        headingPrimary="My"
+        headingAccent="Expertise"
+        subHeading="What I can do"
+      />
       <div className="flex flex-row gap-8 mt-8 ">
         {data.map((item, index) => (
           <div

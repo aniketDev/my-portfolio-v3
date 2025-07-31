@@ -1,23 +1,16 @@
 import Image from "next/image";
+import { SectionHeading } from "@/app/components/sectionHeading";
 
 export const About = () => {
   return (
     <section className="about grid grid-cols-[2fr_1fr] gap-16 bg-[url('/about_bg.png')] bg-cover bg-center bg-no-repeat px-8">
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-3">
-          {/*<span className="w-7 border-2 border-accent"></span>*/}
-          <Image
-            src="/terminal_icon.svg"
-            alt="logo"
-            // layout="responsive"
-            width={30}
-            height={30}
-          />
-          <span className="text-xl">whoami</span>
-        </div>
-        <h1 className="text-5xl font-bold">
-          <span className="text-accent">About</span> Me
-        </h1>
+      <div className="flex flex-col">
+        <SectionHeading
+          headingPrimary="Me"
+          headingAccent="About"
+          subHeading="Whoami"
+          accentFirst
+        />
         <p className="text-xl text-gray-700">
           Hello! My name is Aniket Mandal. I&#39;m a professional Front-end
           Developer with 7+ years of professional experience.
