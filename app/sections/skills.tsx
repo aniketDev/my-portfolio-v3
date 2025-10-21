@@ -10,22 +10,10 @@ export const Skills = () => {
       icon: "javascript.svg",
     },
     {
-      name: "React",
+      name: "TypeScript",
       description:
-        "Experienced in building dynamic user interfaces with React, including hooks and context API.",
-      icon: "react.svg",
-    },
-    {
-      name: "Next.js",
-      description:
-        "Skilled in server-side rendering and static site generation with Next.js.",
-      icon: "nextjs.svg",
-    },
-    {
-      name: "Tailwind CSS",
-      description:
-        "Proficient in using Tailwind CSS for utility-first styling and responsive design.",
-      icon: "tailwind.svg",
+        "Skilled in TypeScript for building robust and type-safe applications.",
+      icon: "typescript.svg",
     },
     {
       name: "React",
@@ -40,50 +28,73 @@ export const Skills = () => {
       icon: "nextjs.svg",
     },
     {
-      name: "Tailwind CSS",
+      name: "Redux",
       description:
-        "Proficient in using Tailwind CSS for utility-first styling and responsive design.",
-      icon: "tailwind.svg",
+        "Experienced in state management with Redux, including redux toolkit and middleware like Thunk.",
+      icon: "redux.svg",
     },
     {
-      name: "React",
+      name: "HTML5",
       description:
-        "Experienced in building dynamic user interfaces with React, including hooks and context API.",
-      icon: "react.svg",
+        "Proficient in modern HTML5, including semantic elements and accessibility best practices.",
+      icon: "html5.svg",
     },
     {
-      name: "Next.js",
+      name: "CSS3",
       description:
-        "Skilled in server-side rendering and static site generation with Next.js.",
-      icon: "nextjs.svg",
+        "Experienced in CSS3, including Flexbox, Grid, and responsive design techniques.",
+      icon: "css3.svg",
     },
     {
-      name: "Tailwind CSS",
+      name: "Sass",
       description:
-        "Proficient in using Tailwind CSS for utility-first styling and responsive design.",
-      icon: "tailwind.svg",
-    },
-    {
-      name: "React",
-      description:
-        "Experienced in building dynamic user interfaces with React, including hooks and context API.",
-      icon: "react.svg",
-    },
-    {
-      name: "Next.js",
-      description:
-        "Skilled in server-side rendering and static site generation with Next.js.",
-      icon: "nextjs.svg",
+        "Skilled in using Sass for writing maintainable and modular CSS.",
+      icon: "sass.svg",
     },
     {
       name: "Tailwind CSS",
       description:
         "Proficient in using Tailwind CSS for utility-first styling and responsive design.",
       icon: "tailwind.svg",
+    },
+    {
+      name: "React Native",
+      description:
+        "Experienced in building cross-platform mobile applications using React Native.",
+      icon: "react-native.svg",
+    },
+    {
+      name: "Expo",
+      description:
+        "Skilled in using Expo for rapid development and deployment of React Native applications.",
+      icon: "expo.svg",
+    },
+    {
+      name: "Git",
+      description:
+        "Proficient in version control using Git, including branching and merging strategies.",
+      icon: "git.svg",
+    },
+    {
+      name: "Jest",
+      description:
+        "Skilled in unit testing and integration testing with Jest and React Testing Library.",
+      icon: "jest.svg",
+    },
+    {
+      name: "RTL",
+      description:
+        "Experienced in testing React components with React Testing Library for making applications more reliable and error free.",
+      icon: "react-testing-library.svg",
     },
   ];
 
-  const rows = [skills.slice(0, 5), skills.slice(5, 9), skills.slice(9, 12)];
+  const rows = [
+    skills.slice(0, 5),
+    skills.slice(5, 9),
+    skills.slice(9, 12),
+    skills.slice(12, 14),
+  ];
 
   return (
     <div className="flex flex-col w-full">

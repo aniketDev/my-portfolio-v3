@@ -1,11 +1,11 @@
 import { Timelines } from "@/app/components/timelines";
 import { SectionHeading } from "@/app/components/sectionHeading";
 
-export const Experience = () => {
-  const experiences = [
+export const Academics = () => {
+  const academics = [
     {
-      rightTitle: "Frontend Developer",
-      leftTitle: "Valtech Solutions Pvt. Ltd.",
+      leftTitle: "Masters in Computer Science",
+      rightTitle: "Maulana Abul Kalam Azad University of Technology, Kolkata",
       leftTimeline: "Jun 2018 - Dec 2019",
       leftDuration: "1 years",
       color: "bg-amber-500",
@@ -35,12 +35,12 @@ export const Experience = () => {
   return (
     <section className="experience">
       <SectionHeading
-        headingPrimary="My Work"
-        headingAccent="Experience"
-        subHeading="Professional history"
+        headingPrimary="My"
+        headingAccent="Academics"
+        subHeading="Education history"
       />
       <div className="mt-8 p-8">
-        <Timelines timelines={experiences} />
+        <Timelines timelines={academics} />
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import "./styles/home.scss";
+import "@/app/sections/styles/home.scss";
+import { Button } from "@/app/components/button";
 
 export const Home = () => {
   return (
@@ -28,11 +29,7 @@ export const Home = () => {
             into reality with code.
           </p>
           <div className="flex gap-4 justify-between">
-            <div>
-              <button className="rounded-xl bg-accent py-3 px-8 text-white">
-                Say Hello
-              </button>
-            </div>
+            <Button text="Say Hello" />
             <div className="absolute bottom-8 right-2">
               <div className="scrolldown"></div>
             </div>

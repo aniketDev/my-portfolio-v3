@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@/app/components/button";
 
 export const Header = () => {
   return (
@@ -14,7 +15,7 @@ export const Header = () => {
             "Services",
             "Skills",
             "Experience",
-            "Education",
+            "Academics",
             "Contact",
           ].map((item) => (
             <a key={item} className="relative group cursor-pointer">
@@ -31,9 +32,7 @@ export const Header = () => {
           ))}
         </nav>
       </div>
-      <button className="rounded-xl bg-accent">
-        <span className="px-8 py-3 text-white">Download CV</span>
-      </button>
+      <Button text="Download CV" />
     </header>
   );
 };
