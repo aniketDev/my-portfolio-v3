@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 interface ButtonPropTypes {
@@ -8,6 +10,7 @@ interface ButtonPropTypes {
   disabled?: boolean;
   children?: React.ReactNode;
 }
+
 export const Button = ({
   type = "primary",
   text = "Button",
@@ -18,22 +21,32 @@ export const Button = ({
 }: ButtonPropTypes) => {
   return (
     <button
-      className="rounded-xl bg-accent"
+      className="rounded-xl text-white font-semibold hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer"
+      style={{
+        background: "linear-gradient(135deg, #ff4f6e, #e63d5a)",
+        boxShadow: "0 6px 20px rgba(255, 79, 110, 0.3)",
+      }}
       disabled={disabled}
       onClick={onClick}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow =
+          "0 10px 28px rgba(255, 79, 110, 0.4)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow =
+          "0 6px 20px rgba(255, 79, 110, 0.3)";
+      }}
     >
       {children ? (
         children
       ) : (
-        <div className={`flex items-center justify-center gap-2`}>
+        <div className="flex items-center justify-center gap-2">
           {iconName && (
-            <span className="px-8 py-3 text-white">
+            <span className="px-8 py-3">
               <i className={`icon-${iconName} text-xl`}></i>
             </span>
           )}
-          <span className="px-8 py-3 font-semibold text-white rounded-lg shadow-md hover:bg-accent/90 transition">
-            {text}
-          </span>
+          <span className="px-8 py-3">{text}</span>
         </div>
       )}
     </button>

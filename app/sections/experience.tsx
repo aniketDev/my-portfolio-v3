@@ -1,3 +1,5 @@
+"use client";
+
 import { Timelines } from "@/app/components/timelines";
 import { SectionHeading } from "@/app/components/sectionHeading";
 
@@ -19,7 +21,7 @@ export const Experience = () => {
       leftDuration: "1 years",
       color: "bg-teal-500",
       rightDescription:
-        "Assisted in developing a mobile application using React Native, contributing to the project’s success.",
+        "Assisted in developing a mobile application using React Native, contributing to the project's success.",
     },
     {
       rightTitle: "Junior Software Developer",
@@ -33,14 +35,27 @@ export const Experience = () => {
   ];
 
   return (
-    <section className="experience">
-      <SectionHeading
-        headingPrimary="My Work"
-        headingAccent="Experience"
-        subHeading="Professional history"
+    <section
+      className="py-24 px-8 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #0f172a 0%, #1a2940 50%, #0f172a 100%)",
+      }}
+    >
+      <div
+        className="absolute bottom-[-5rem] right-[-3rem] w-[18rem] h-[18rem] rounded-full blur-[90px] pointer-events-none"
+        style={{ background: "rgba(255, 79, 110, 0.07)" }}
       />
-      <div className="mt-8 p-8">
-        <Timelines timelines={experiences} />
+
+      <div className="max-w-6xl mx-auto">
+        <SectionHeading
+          headingPrimary="My Work"
+          headingAccent="Experience"
+          subHeading="Professional history"
+        />
+        <div className="mt-8 p-8">
+          <Timelines timelines={experiences} />
+        </div>
       </div>
     </section>
   );
