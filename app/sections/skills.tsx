@@ -1,93 +1,60 @@
+"use client";
+
 import Image from "next/image";
 import { SectionHeading } from "@/app/components/sectionHeading";
+import { motion, type Variants } from "motion/react";
 
 export const Skills = () => {
-  const skills = [
+  const categorizedSkills = [
     {
-      name: "JavaScript",
-      description:
-        "Proficient in modern JavaScript (ES6+), including async/await.",
-      icon: "javascript.svg",
+      title: "Frontend Core & Ecosystem",
+      skills: [
+        { name: "JavaScript", description: "Modern JS (ES6+), async/await, DOM manipulation.", icon: "javascript.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { name: "TypeScript", description: "Static typing, interfaces, advanced types.", icon: "typescript.svg", url: "https://www.typescriptlang.org/" },
+        { name: "React", description: "Hooks, Context API, dynamic UIs.", icon: "react.svg", url: "https://react.dev/" },
+        { name: "Next.js", description: "App Router, SSR, SSG, robust routing.", icon: "nextjs.svg", url: "https://nextjs.org/" },
+        { name: "HTML5", description: "Semantic markup, accessibility standards.", icon: "html5.svg", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+        { name: "CSS3", description: "Flexbox, Grid, animations, variables.", icon: "css3.svg", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+        { name: "Tailwind", description: "Utility-first CSS, responsive styling.", icon: "tailwind.svg", url: "https://tailwindcss.com/" },
+        { name: "Sass", description: "Mixins, variables, modular styling.", icon: "sass.svg", url: "https://sass-lang.com/" },
+      ]
     },
     {
-      name: "TypeScript",
-      description:
-        "Skilled in TypeScript for building robust and type-safe applications.",
-      icon: "typescript.svg",
+      title: "Mobile & State Management",
+      skills: [
+        { name: "React Native", description: "Cross-platform mobile UI components.", icon: "react-native.svg", url: "https://reactnative.dev/" },
+        { name: "Expo", description: "Rapid native app development lifecycle.", icon: "expo.svg", url: "https://expo.dev/" },
+        { name: "Redux", description: "Global state, RTK Query, middlewares.", icon: "redux.svg", url: "https://redux.js.org/" },
+      ]
     },
     {
-      name: "React",
-      description:
-        "Experienced in building dynamic user interfaces with React.",
-      icon: "react.svg",
-    },
-    {
-      name: "Next.js",
-      description:
-        "Skilled in SSR and static site generation with Next.js.",
-      icon: "nextjs.svg",
-    },
-    {
-      name: "Redux",
-      description:
-        "Experienced in state management with Redux and Redux Toolkit.",
-      icon: "redux.svg",
-    },
-    {
-      name: "HTML5",
-      description:
-        "Proficient in modern HTML5, semantics and accessibility.",
-      icon: "html5.svg",
-    },
-    {
-      name: "CSS3",
-      description:
-        "Experienced in CSS3, Flexbox, Grid, and responsive design.",
-      icon: "css3.svg",
-    },
-    {
-      name: "Sass",
-      description:
-        "Skilled in using Sass for writing modular CSS.",
-      icon: "sass.svg",
-    },
-    {
-      name: "Tailwind",
-      description:
-        "Proficient in using Tailwind CSS for utility-first styling.",
-      icon: "tailwind.svg",
-    },
-    {
-      name: "React Native",
-      description:
-        "Experienced in building cross-platform mobile apps.",
-      icon: "react-native.svg",
-    },
-    {
-      name: "Expo",
-      description:
-        "Skilled in using Expo for rapid React Native app development.",
-      icon: "expo.svg",
-    },
-    {
-      name: "Git",
-      description:
-        "Proficient in version control using Git.",
-      icon: "git.svg",
-    },
-    {
-      name: "Jest",
-      description:
-        "Skilled in unit testing with Jest.",
-      icon: "jest.svg",
-    },
-    {
-      name: "RTL",
-      description:
-        "Experienced in testing with React Testing Library.",
-      icon: "react-testing-library.svg",
-    },
+      title: "Tools & Quality Assurance",
+      skills: [
+        { name: "Git", description: "Version control, branching strategies.", icon: "git.svg", url: "https://git-scm.com/" },
+        { name: "Jest", description: "Test suites, mocks, snapshots.", icon: "jest.svg", url: "https://jestjs.io/" },
+        { name: "RTL", description: "Component testing, simulating user events.", icon: "react-testing-library.svg", url: "https://testing-library.com/docs/react-testing-library/intro/" },
+      ]
+    }
   ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    },
+  };
 
   return (
     <section className="w-full py-24 bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden" id="skills">
@@ -103,42 +70,55 @@ export const Skills = () => {
             subHeading="My Stack"
           />
           <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto md:mx-0">
-            A comprehensive list of technologies I work with to build high-performance, scalable web and mobile applications.
+            A categorized overview of the technologies and tools I utilize to engineer scalable web and mobile applications.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-8 justify-items-center">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="group flex flex-col items-center justify-center p-6 bg-white/60 backdrop-blur-xl rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white/50 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 w-full max-w-[180px] aspect-square relative overflow-hidden cursor-default"
-            >
-              {/* Hover gradient background effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <motion.div
+          className="flex flex-col gap-14"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {categorizedSkills.map((category, catIdx) => (
+            <motion.div key={catIdx} variants={itemVariants} className="w-full">
+              <h3 className="text-2xl font-bold text-gray-800 mb-8 pl-4 border-l-4 border-accent">
+                {category.title}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-8 justify-items-center sm:justify-items-start lg:justify-items-center">
+                {category.skills.map((skill, index) => (
+                  <motion.a
+                    href={skill.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    className="group border border-white/60 flex flex-col items-center justify-center p-6 bg-white/50 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:bg-white/70 transition-all duration-300 w-full max-w-[190px] aspect-square relative overflow-hidden cursor-pointer"
+                  >
+                    {/* Hover gradient background effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <div className="relative z-10 flex flex-col items-center gap-4">
-                <div className="w-16 h-16 flex items-center justify-center relative transform group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
-                  <Image
-                    src={`/skills/${skill.icon}`}
-                    alt={skill.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <p className="text-md sm:text-lg text-gray-800 font-semibold text-center group-hover:text-accent transition-colors duration-300">
-                  {skill.name}
-                </p>
-              </div>
+                    <div className="relative z-10 flex flex-col items-center gap-5">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center relative transform group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
+                        <Image
+                          src={`/skills/${skill.icon}`}
+                          alt={skill.name}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <p className="text-md sm:text-lg text-gray-800 font-semibold text-center group-hover:text-accent transition-colors duration-300">
+                        {skill.name}
+                      </p>
+                    </div>
 
-              {/* Tooltip on hover (desktop only) */}
-              <div className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 bottom-[-10px] group-hover:bottom-2 left-0 right-0 text-center px-2 pointer-events-none hidden lg:block">
-                <div className="bg-gray-900/90 text-white text-[10px] leading-tight px-3 py-2 rounded-lg backdrop-blur-sm shadow-xl transform scale-95 group-hover:scale-100 transition-transform origin-bottom duration-300 mx-auto max-w-[140px]">
-                  {skill.description}
-                </div>
+                  </motion.a>
+                ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

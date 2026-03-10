@@ -28,8 +28,7 @@ export const Home = () => {
               </span>
             </h1>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-700 leading-snug">
-              Professional Front-end Web <br className="hidden lg:block" />&
-              Mobile App Developer
+              Professional Front-end Web & Mobile App Developer
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
               Currently based in Bangalore, with a focus on creating beautiful,
