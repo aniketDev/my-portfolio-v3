@@ -31,9 +31,8 @@ export const About = () => {
               <div className="absolute -inset-4 bg-linear-to-tr from-accent/20 to-purple-200/20 rounded-3xl transform -rotate-2"></div>
               <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image
-                  aria-hidden
-                  src="/about_dp.png"
-                  alt="Aniket - About Me"
+                  src="/workspace.png"
+                  alt="Aniket's Workspace"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
                 />

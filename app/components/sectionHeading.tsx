@@ -6,6 +6,7 @@ interface SectionHeadingProps {
   headingAccent?: string;
   subHeading?: string;
   accentFirst?: boolean;
+  description?: string;
 }
 
 export const SectionHeading = ({
@@ -13,6 +14,7 @@ export const SectionHeading = ({
   headingAccent,
   subHeading,
   accentFirst = false,
+  description,
 }: SectionHeadingProps) => (
   <div className="flex flex-col gap-4 mb-8">
     <div className="flex items-center gap-3">
@@ -31,5 +33,6 @@ export const SectionHeading = ({
         </Fragment>
       )}
     </h1>
+    <p className="mt-4 text-gray-600 text-lg">{description}</p>
   </div>
 );

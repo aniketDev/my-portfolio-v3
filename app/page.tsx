@@ -10,7 +10,7 @@ import { Contact } from "@/app/sections/contact";
 
 export default function Page() {
   return (
-    <div className="grid grid-rows-[auto_1fr_1fr] min-h-screen gap-4 font-[family-name:var(--font-geist-sans)] pl-20 pr-20">
+    <div className="grid grid-rows-[auto_1fr] min-h-screen gap-4 font-[family-name:var(--font-geist-sans)] pl-20 pr-20">
       <Header />
       <main className="flex flex-col gap-16 row-start-2 items-center sm:items-start">
         {/*<AnimatedImage />*/}

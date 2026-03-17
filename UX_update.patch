@@ -1,0 +1,977 @@
+Subject: [PATCH] UX_update
+---
+Index: app/sections/academics.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/academics.tsx b/app/sections/academics.tsx
+--- a/app/sections/academics.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/academics.tsx	(date 1772359438648)
+@@ -33,14 +33,22 @@
+   ];
+ 
+   return (
+-    <section className="experience">
+-      <SectionHeading
+-        headingPrimary="My"
+-        headingAccent="Academics"
+-        subHeading="Education history"
+-      />
+-      <div className="mt-8 p-8">
+-        <Timelines timelines={academics} />
++    <section className="w-full py-24 bg-gradient-to-tr from-gray-100 via-white to-gray-50 relative overflow-hidden" id="academics">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-10 left-10 w-80 h-80 bg-accent/15 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
++      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-200/50 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
++        <div className="mb-16">
++          <SectionHeading
++            headingPrimary="My"
++            headingAccent="Academics"
++            subHeading="Education history"
++          />
++        </div>
++        <div className="mt-8 max-w-5xl mx-auto">
++          <Timelines timelines={academics} />
++        </div>
+       </div>
+     </section>
+   );
+Index: app/sections/contact.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/contact.tsx b/app/sections/contact.tsx
+--- a/app/sections/contact.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/contact.tsx	(date 1772358668448)
+@@ -12,81 +12,127 @@
+ 
+ export const Contact = () => {
+   return (
+-    <section className="w-full py-20 bg-gradient-to-br from-gray-50 to-white">
+-      <SectionHeading
+-        headingPrimary="My"
+-        headingAccent="Contact"
+-        subHeading="Get in Touch"
+-      />
+-      <div className="flex justify-center mt-10">
+-        <div className="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+-          {/* Contact Info */}
+-          <div className="flex flex-col gap-6 justify-center">
+-            <div className="flex items-center gap-4">
+-              <FaPhoneAlt className="text-accent text-xl" />
+-              <span className="text-gray-700 font-medium">+1 234 567 8901</span>
+-            </div>
+-            <div className="flex items-center gap-4">
+-              <FaEnvelope className="text-accent text-xl" />
+-              <span className="text-gray-700 font-medium">
+-                your.email@example.com
+-              </span>
+-            </div>
+-            <div className="flex items-center gap-4">
+-              <FaMapMarkerAlt className="text-accent text-xl" />
+-              <span className="text-gray-700 font-medium">
+-                123 Main St, City, Country
+-              </span>
++    <section className="w-full py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden" id="contact">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-20 left-10 w-64 h-64 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
++      <div className="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
++      <div className="absolute -bottom-8 left-1/2 w-80 h-80 bg-accent/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
++        <SectionHeading
++          headingPrimary="My"
++          headingAccent="Contact"
++          subHeading="Let's create something together"
++        />
++
++        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start">
++          {/* Contact Information */}
++          <div className="flex flex-col space-y-8">
++            <h3 className="text-3xl font-bold text-gray-800 mb-2">Get in Touch</h3>
++            <p className="text-gray-600 text-lg leading-relaxed">
++              Have a project in mind, looking for a collaboration, or just want to say hi? Feel free to reach out. I'm always open to discussing new projects and creative ideas.
++            </p>
++
++            <div className="space-y-6 mt-4">
++              <div className="flex items-center group cursor-pointer">
++                <div className="flex items-center justify-center w-14 h-14 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-300 text-accent">
++                  <FaPhoneAlt size={20} />
++                </div>
++                <div className="ml-6">
++                  <p className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-1">Phone</p>
++                  <p className="text-lg text-gray-800 font-semibold group-hover:text-accent transition-colors">+1 (234) 567-890</p>
++                </div>
++              </div>
++
++              <div className="flex items-center group cursor-pointer">
++                <div className="flex items-center justify-center w-14 h-14 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-300 text-accent">
++                  <FaEnvelope size={20} />
++                </div>
++                <div className="ml-6">
++                  <p className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-1">Email</p>
++                  <p className="text-lg text-gray-800 font-semibold group-hover:text-accent transition-colors">hello@example.com</p>
++                </div>
++              </div>
++
++              <div className="flex items-center group cursor-pointer">
++                <div className="flex items-center justify-center w-14 h-14 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-300 text-accent">
++                  <FaMapMarkerAlt size={20} />
++                </div>
++                <div className="ml-6">
++                  <p className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-1">Location</p>
++                  <p className="text-lg text-gray-800 font-semibold group-hover:text-accent transition-colors">San Francisco, CA</p>
++                </div>
++              </div>
+             </div>
+-            {/* Social Accounts */}
+-            <div className="flex gap-5 mt-4">
+-              <a
+-                href="https://github.com/yourusername"
+-                target="_blank"
+-                rel="noopener noreferrer"
+-                className="text-accent hover:text-accent-dark transition-colors text-2xl"
+-                aria-label="GitHub"
+-              >
+-                <FaGithub />
+-              </a>
+-              <a
+-                href="https://linkedin.com/in/yourusername"
+-                target="_blank"
+-                rel="noopener noreferrer"
+-                className="text-accent hover:text-accent-dark transition-colors text-2xl"
+-                aria-label="LinkedIn"
+-              >
+-                <FaLinkedin />
+-              </a>
+-              <a
+-                href="https://twitter.com/yourusername"
+-                target="_blank"
+-                rel="noopener noreferrer"
+-                className="text-accent hover:text-accent-dark transition-colors text-2xl"
+-                aria-label="Twitter"
+-              >
+-                <FaTwitter />
+-              </a>
++
++            <div className="pt-8 mt-4 border-t border-gray-200">
++              <p className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-4">Follow Me</p>
++              <div className="flex gap-4">
++                <a href="#" className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-sm text-gray-600 hover:text-white hover:bg-gray-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
++                  <FaGithub size={20} />
++                </a>
++                <a href="#" className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-sm text-gray-600 hover:text-white hover:bg-blue-600 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
++                  <FaLinkedin size={20} />
++                </a>
++                <a href="#" className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-sm text-gray-600 hover:text-white hover:bg-sky-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
++                  <FaTwitter size={20} />
++                </a>
++              </div>
+             </div>
+           </div>
+-          {/* Message Form */}
+-          <form
+-            className="flex flex-col gap-6"
+-            onSubmit={(e) => e.preventDefault()}
+-          >
+-            <textarea
+-              placeholder="Your Message"
+-              rows={6}
+-              className="px-4 py-3 rounded-lg border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition resize-none"
+-              required
+-            />
+-            <button
+-              type="submit"
+-              className="bg-accent text-white font-semibold py-3 rounded-lg shadow-md hover:bg-accent/90 transition"
+-            >
+-              Send Message
+-            </button>
+-          </form>
++
++          {/* Contact Form */}
++          <div className="bg-white/80 backdrop-blur-xl p-8 sm:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50">
++            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
++              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
++                <div className="space-y-2">
++                  <label htmlFor="name" className="text-sm font-semibold text-gray-700">Full Name</label>
++                  <input
++                    type="text"
++                    id="name"
++                    placeholder="John Doe"
++                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 placeholder:text-gray-400"
++                  />
++                </div>
++                <div className="space-y-2">
++                  <label htmlFor="email" className="text-sm font-semibold text-gray-700">Email Address</label>
++                  <input
++                    type="email"
++                    id="email"
++                    placeholder="john@example.com"
++                    className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 placeholder:text-gray-400"
++                  />
++                </div>
++              </div>
++
++              <div className="space-y-2">
++                <label htmlFor="subject" className="text-sm font-semibold text-gray-700">Subject</label>
++                <input
++                  type="text"
++                  id="subject"
++                  placeholder="How can I help you?"
++                  className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 placeholder:text-gray-400"
++                />
++              </div>
++
++              <div className="space-y-2">
++                <label htmlFor="message" className="text-sm font-semibold text-gray-700">Message</label>
++                <textarea
++                  id="message"
++                  rows={5}
++                  placeholder="Your message goes here..."
++                  className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-300 placeholder:text-gray-400 resize-none"
++                ></textarea>
++              </div>
++
++              <button
++                type="submit"
++                className="w-full py-4 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl shadow-lg shadow-accent/30 transform hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
++              >
++                Send Message
++              </button>
++            </form>
++          </div>
+         </div>
+       </div>
+     </section>
+Index: app/sections/about.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/about.tsx b/app/sections/about.tsx
+--- a/app/sections/about.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/about.tsx	(date 1772359275381)
+@@ -7,73 +7,96 @@
+   const experience = currentYear - startYear;
+ 
+   return (
+-    <section className="about grid grid-cols-[2fr_1fr] gap-16 bg-[url('/about_bg.png')] bg-cover bg-center bg-no-repeat px-8">
+-      <div className="flex flex-col">
+-        <SectionHeading
+-          headingPrimary="Me"
+-          headingAccent="About"
+-          subHeading="Whoami"
+-          accentFirst
+-        />
+-        <div className="text-xl text-gray-700 space-y-6 mt-2">
+-          <p>
+-            Hello! My name is <b>Aniket Mandal</b>. I&#39;m a passionate
+-            <b> Front-end Developer</b> with
+-            <b> {experience}+ years of professional experience</b>, building
+-            responsive, user-focused web applications.
+-          </p>
+-          <ul className="space-y-4">
+-            <li className="flex items-start gap-3">
+-              <span className="mt-2 w-4 h-4 rounded-full border-2 border-teal-500 flex-shrink-0"></span>
+-              <span>
+-                My journey began at <b>Balihans Software Pvt. Ltd.</b>, where I
+-                helped develop an <b>online school management system</b> using
+-                <b> Java, Spring, HTML, CSS, and Bootstrap</b>.
+-              </span>
+-            </li>
+-            <li className="flex items-start gap-3">
+-              <span className="mt-2 w-4 h-4 rounded-full border-2 border-teal-500 flex-shrink-0"></span>
+-              <span>
+-                I then joined <b>Primesoft IP Solutions Pvt. Ltd.</b> as a
+-                <b> Software Engineer</b>, contributing to banking and
+-                enterprise projects using
+-                <b> Angular 5, Ionic 3, and React.js</b>.
+-              </span>
+-            </li>
+-            <li className="flex items-start gap-3">
+-              <span className="mt-2 w-4 h-4 rounded-full border-2 border-teal-500 flex-shrink-0"></span>
+-              <span>
+-                At <b>Valtech India Pvt. Ltd.</b>, I worked on the
+-                <b> Zee5 OTT platform</b>, one of India&#39;s top streaming
+-                services, leveraging <b>React, Redux and vanilla JS</b> to
+-                deliver high-quality user experiences.
+-              </span>
+-            </li>
+-            <li className="flex items-start gap-3">
+-              <span className="mt-2 w-4 h-4 rounded-full border-2 border-teal-500 flex-shrink-0"></span>
+-              <span>
+-                Currently, I&#39;m with <b>Sabre Travel Technologies</b>, where
+-                I’m building a <b>web-based airline ticket booking system</b>{" "}
+-                using <b>React, Redux</b>, and other modern web technologies.
+-              </span>
+-            </li>
+-          </ul>
+-          <p>
+-            I enjoy turning complex problems into simple, elegant solutions and
+-            I’m always excited to learn, grow, and contribute to impactful
+-            digital experiences.
+-          </p>
+-        </div>
+-      </div>
+-      <div>
+-        <Image
+-          aria-hidden
+-          src="/about_dp.png"
+-          alt="about me image"
+-          height={400}
+-          width={500}
+-          className="object-cover rounded-lg"
+-        />
++    <section className="w-full py-24 bg-gradient-to-tl from-gray-100 via-white to-gray-50 relative overflow-hidden" id="about">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
++      <div className="absolute top-1/2 left-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
++        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center">
++
++          {/* Image Section */}
++          <div className="relative order-2 lg:order-1 flex justify-center mt-10 lg:mt-0">
++            <div className="relative w-full max-w-md aspect-[4/5] lg:aspect-square">
++              {/* Glassmorphic decorative card behind image */}
++              <div className="absolute -inset-4 bg-white/50 backdrop-blur-xl rounded-3xl transform rotate-3 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/60"></div>
++              <div className="absolute -inset-4 bg-gradient-to-tr from-accent/20 to-purple-200/20 rounded-3xl transform -rotate-2"></div>
++              <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
++                <Image
++                  aria-hidden
++                  src="/about_dp.png"
++                  alt="Aniket - About Me"
++                  fill
++                  className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
++                />
++              </div>
++            </div>
++          </div>
++
++          {/* Text Section */}
++          <div className="flex flex-col order-1 lg:order-2">
++            <SectionHeading
++              headingPrimary="Me"
++              headingAccent="About"
++              subHeading="Whoami"
++              accentFirst
++            />
++
++            <div className="mt-8 bg-white/70 backdrop-blur-2xl rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/50">
++              <p className="text-xl text-gray-700 leading-relaxed mb-8">
++                Hello! My name is <span className="font-bold text-gray-900 border-b-2 border-accent/30 tracking-wide">Aniket Mandal</span>. I&#39;m a passionate <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Front-end Developer</span> with <span className="font-bold text-gray-900 bg-accent/10 px-2 py-0.5 rounded-md">{experience}+ years of professional experience</span>, building responsive, user-focused web applications.
++              </p>
++
++              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent pl-8 md:pl-0">
++
++                {/* Timeline Items */}
++                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group md:mb-6">
++                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-[3px] border-white bg-accent shadow absolute left-[-2.15rem] md:left-1/2 md:-translate-x-1/2 group-hover:scale-125 transition-transform duration-300"></div>
++                  <div className="w-full md:w-[calc(50%-2rem)] bg-white/60 hover:bg-white/90 transition-colors backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100 group-hover:shadow-md">
++                    <p className="text-gray-600 text-[15px] leading-relaxed">
++                      My journey began at <strong className="text-gray-800">Balihans Software Pvt. Ltd.</strong>, developing an online school management system using <strong className="text-accent">Java, Spring, HTML, CSS, and Bootstrap</strong>.
++                    </p>
++                  </div>
++                </div>
++
++                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group md:mb-6">
++                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-[3px] border-white bg-purple-500 shadow absolute left-[-2.15rem] md:left-1/2 md:-translate-x-1/2 group-hover:scale-125 transition-transform duration-300"></div>
++                  <div className="w-full md:w-[calc(50%-2rem)] bg-white/60 hover:bg-white/90 transition-colors backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100 group-hover:shadow-md text-right md:text-left">
++                    <p className="text-gray-600 text-[15px] leading-relaxed">
++                      Joined <strong className="text-gray-800">Primesoft IP Solutions Pvt. Ltd.</strong> as a Software Engineer, contributing to banking & enterprise projects using <strong className="text-purple-500">Angular 5, Ionic 3, and React.js</strong>.
++                    </p>
++                  </div>
++                </div>
++
++                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group md:mb-6">
++                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-[3px] border-white bg-accent shadow absolute left-[-2.15rem] md:left-1/2 md:-translate-x-1/2 group-hover:scale-125 transition-transform duration-300"></div>
++                  <div className="w-full md:w-[calc(50%-2rem)] bg-white/60 hover:bg-white/90 transition-colors backdrop-blur-sm p-4 rounded-xl shadow-sm border border-gray-100 group-hover:shadow-md">
++                    <p className="text-gray-600 text-[15px] leading-relaxed">
++                      Worked at <strong className="text-gray-800">Valtech India Pvt. Ltd.</strong> on the <strong className="text-gray-800">Zee5 OTT platform</strong> using <strong className="text-accent">React, Redux and vanilla JS</strong> to deliver high-quality UX.
++                    </p>
++                  </div>
++                </div>
++
++                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group text-right md:text-left">
++                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-[3px] border-white bg-purple-500 shadow absolute left-[-2.15rem] md:left-1/2 md:-translate-x-1/2 group-hover:scale-125 transition-transform duration-300 flex-shrink-0 animate-pulse"></div>
++                  <div className="w-full md:w-[calc(50%-2rem)] bg-gradient-to-br from-white to-gray-50 border-l-4 md:border-l-0 md:border-r-4 border-purple-500 p-4 rounded-xl shadow-md group-hover:shadow-lg transition-all">
++                    <p className="text-gray-600 text-[15px] leading-relaxed">
++                      Currently at <strong className="text-gray-800">Sabre Travel Technologies</strong>, building a web-based airline ticket booking system using <strong className="text-purple-500">React, Redux</strong>, and modern tech.
++                    </p>
++                  </div>
++                </div>
++
++              </div>
++            </div>
++
++            <div className="mt-8 ml-2">
++              <p className="text-lg text-gray-500 italic border-l-4 border-accent pl-4">
++                I enjoy turning complex problems into simple, elegant solutions and I’m always excited to learn, grow, and contribute to impactful digital experiences.
++              </p>
++            </div>
++
++          </div>
++        </div>
+       </div>
+     </section>
+   );
+Index: app/components/timelines.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/components/timelines.tsx b/app/components/timelines.tsx
+--- a/app/components/timelines.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/components/timelines.tsx	(date 1772359410351)
+@@ -9,7 +9,7 @@
+ 
+ export const Timelines = ({ timelines }: { timelines: Timeline[] }) => {
+   return (
+-    <div className="flex flex-col">
++    <div className="flex flex-col w-full">
+       {timelines.map((timeline, index) => {
+         const {
+           leftTitle,
+@@ -20,21 +20,59 @@
+           color,
+         }: Timeline = timeline;
+         return (
+-          <div key={index} className="grid grid-cols-[1fr_auto_1.5fr] gap-8">
+-            <div className="flex flex-col gap-2">
+-              <h2 className="text-2xl font-bold">{leftTitle}</h2>
+-              <p>{leftTimeline}</p>
+-              <p>{leftDuration}</p>
+-            </div>
+-            <div className="flex justify-self-end items-start relative">
+-              <div className="flex border p-3 rounded-full justify-center before:absolute before:content-[''] before:w-[1px] before:h-[calc(100%-45px)] before:bg-gray-300 before:top-[45px] before:left-1/2 before:-translate-x-1/2">
+-                <span className={`h-5 w-5 ${color} rounded-full`}></span>
+-              </div>
+-            </div>
+-            <div className="flex flex-col gap-3 p-[0.5rem_1rem_2rem]">
+-              <h2 className="text-2xl font-bold">{rightTitle}</h2>
+-              <p className="text-lg text-gray-500">{rightDescription}</p>
++          <div key={index} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1.5fr] gap-0 md:gap-8 group">
++            {/* Left Side: Company Info (Hidden on small screens, shown on md+) */}
++            <div className="hidden md:flex flex-col gap-2 justify-start items-end text-right pt-6 relative group-hover:-translate-x-2 transition-transform duration-300">
++              <h2 className="text-xl md:text-2xl font-bold text-gray-800">{leftTitle}</h2>
++              <div className="inline-flex items-center gap-2 text-gray-500 font-medium bg-white/50 px-3 py-1 rounded-full text-sm mt-1">
++                <span>{leftTimeline}</span>
++                {leftDuration && (
++                  <>
++                    <span className="w-1 h-1 rounded-full bg-gray-400"></span>
++                    <span className="text-gray-400 italic">{leftDuration}</span>
++                  </>
++                )}
++              </div>
++            </div>
++
++            {/* Center: Timeline line and node */}
++            <div className="hidden md:flex justify-center items-stretch relative">
++              {/* Line */}
++              <div className={`absolute left-1/2 -ml-px w-0.5 h-full ${index === timelines.length - 1 ? 'bg-gradient-to-b from-gray-200 to-transparent' : 'bg-gray-200'}`}></div>
++
++              {/* Node connecting left and right */}
++              <div className="relative mt-8 z-10 w-12 h-12 rounded-full border-4 border-white bg-gray-50 shadow-md flex items-center justify-center group-hover:scale-125 transition-transform duration-500 group-hover:border-accent/20">
++                <span className={`h-4 w-4 ${color || 'bg-accent'} rounded-full shadow-inner animate-pulse duration-2000`}></span>
++              </div>
+             </div>
++
++            {/* Mobile Company Info & Node */}
++            <div className="md:hidden flex items-center gap-4 mb-4 mt-8">
++              <div className="relative z-10 w-10 h-10 rounded-full border-4 border-white bg-gray-50 shadow-md flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
++                <span className={`h-3 w-3 ${color || 'bg-accent'} rounded-full shadow-inner`}></span>
++              </div>
++              <div className="flex flex-col">
++                <h2 className="text-lg font-bold text-gray-800">{leftTitle}</h2>
++                <div className="text-sm text-gray-500 font-medium">
++                  {leftTimeline} {leftDuration && `• ${leftDuration}`}
++                </div>
++              </div>
++            </div>
++
++            {/* Right Side: Role and Description */}
++            <div className="flex flex-col gap-4 pb-12 md:pb-16 pt-0 md:pt-4 group-hover:translate-x-2 transition-transform duration-300 ml-12 md:ml-0">
++              <div className="bg-white/70 backdrop-blur-xl p-6 md:p-8 rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white/60 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-accent/20 transition-all duration-300 relative overflow-hidden">
++                {/* Decorative background glow for card */}
++                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-${color ? color.replace('bg-', '') : 'accent'}/10 to-transparent rounded-bl-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500`}></div>
++
++                <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-purple-500 transition-colors duration-300 w-max relative z-10">
++                  {rightTitle}
++                </h2>
++                <p className="text-base md:text-lg text-gray-600 leading-relaxed mt-3 relative z-10">
++                  {rightDescription}
++                </p>
++              </div>
++            </div>
+           </div>
+         );
+       })}
+Index: app/sections/skills.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/skills.tsx b/app/sections/skills.tsx
+--- a/app/sections/skills.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/skills.tsx	(date 1772359325935)
+@@ -6,7 +6,7 @@
+     {
+       name: "JavaScript",
+       description:
+-        "Proficient in modern JavaScript (ES6+), including async/await, promises, and modules.",
++        "Proficient in modern JavaScript (ES6+), including async/await.",
+       icon: "javascript.svg",
+     },
+     {
+@@ -18,115 +18,128 @@
+     {
+       name: "React",
+       description:
+-        "Experienced in building dynamic user interfaces with React, including hooks and context API.",
++        "Experienced in building dynamic user interfaces with React.",
+       icon: "react.svg",
+     },
+     {
+       name: "Next.js",
+       description:
+-        "Skilled in server-side rendering and static site generation with Next.js.",
++        "Skilled in SSR and static site generation with Next.js.",
+       icon: "nextjs.svg",
+     },
+     {
+       name: "Redux",
+       description:
+-        "Experienced in state management with Redux, including redux toolkit and middleware like Thunk.",
++        "Experienced in state management with Redux and Redux Toolkit.",
+       icon: "redux.svg",
+     },
+     {
+       name: "HTML5",
+       description:
+-        "Proficient in modern HTML5, including semantic elements and accessibility best practices.",
++        "Proficient in modern HTML5, semantics and accessibility.",
+       icon: "html5.svg",
+     },
+     {
+       name: "CSS3",
+       description:
+-        "Experienced in CSS3, including Flexbox, Grid, and responsive design techniques.",
++        "Experienced in CSS3, Flexbox, Grid, and responsive design.",
+       icon: "css3.svg",
+     },
+     {
+       name: "Sass",
+       description:
+-        "Skilled in using Sass for writing maintainable and modular CSS.",
++        "Skilled in using Sass for writing modular CSS.",
+       icon: "sass.svg",
+     },
+     {
+-      name: "Tailwind CSS",
++      name: "Tailwind",
+       description:
+-        "Proficient in using Tailwind CSS for utility-first styling and responsive design.",
++        "Proficient in using Tailwind CSS for utility-first styling.",
+       icon: "tailwind.svg",
+     },
+     {
+       name: "React Native",
+       description:
+-        "Experienced in building cross-platform mobile applications using React Native.",
++        "Experienced in building cross-platform mobile apps.",
+       icon: "react-native.svg",
+     },
+     {
+       name: "Expo",
+       description:
+-        "Skilled in using Expo for rapid development and deployment of React Native applications.",
++        "Skilled in using Expo for rapid React Native app development.",
+       icon: "expo.svg",
+     },
+     {
+       name: "Git",
+       description:
+-        "Proficient in version control using Git, including branching and merging strategies.",
++        "Proficient in version control using Git.",
+       icon: "git.svg",
+     },
+     {
+       name: "Jest",
+       description:
+-        "Skilled in unit testing and integration testing with Jest and React Testing Library.",
++        "Skilled in unit testing with Jest.",
+       icon: "jest.svg",
+     },
+     {
+       name: "RTL",
+       description:
+-        "Experienced in testing React components with React Testing Library for making applications more reliable and error free.",
++        "Experienced in testing with React Testing Library.",
+       icon: "react-testing-library.svg",
+     },
+   ];
+ 
+-  const rows = [
+-    skills.slice(0, 5),
+-    skills.slice(5, 9),
+-    skills.slice(9, 12),
+-    skills.slice(12, 14),
+-  ];
+-
+   return (
+-    <div className="flex flex-col w-full">
+-      <SectionHeading
+-        headingPrimary="Technical"
+-        headingAccent="Skills"
+-        subHeading="My skills"
+-      />
++    <section className="w-full py-24 bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden" id="skills">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
++      <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent/15 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
++        <div className="text-center md:text-left mb-16">
++          <SectionHeading
++            headingPrimary="Technical"
++            headingAccent="Skills"
++            subHeading="My Stack"
++          />
++          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto md:mx-0">
++            A comprehensive list of technologies I work with to build high-performance, scalable web and mobile applications.
++          </p>
++        </div>
+ 
+-      <div className="flex flex-col gap-8 mt-10">
+-        {rows.map((row, rowIndex) => (
+-          <div key={rowIndex} className="flex justify-center gap-8">
+-            {row.map((skill, index) => (
+-              <div
+-                key={index}
+-                className="flex flex-col items-center gap-4 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 w-40"
+-              >
+-                <Image
+-                  src={`/skills/${skill.icon}`}
+-                  alt={skill.name}
+-                  height={70}
+-                  width={70}
+-                  className="object-cover"
+-                />
+-                <p className="text-xl text-gray-600 font-medium">
++        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-8 justify-items-center">
++          {skills.map((skill, index) => (
++            <div
++              key={index}
++              className="group flex flex-col items-center justify-center p-6 bg-white/60 backdrop-blur-xl rounded-3xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-white/50 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 w-full max-w-[180px] aspect-square relative overflow-hidden cursor-default"
++            >
++              {/* Hover gradient background effect */}
++              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++
++              <div className="relative z-10 flex flex-col items-center gap-4">
++                <div className="w-16 h-16 flex items-center justify-center relative transform group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
++                  <Image
++                    src={`/skills/${skill.icon}`}
++                    alt={skill.name}
++                    fill
++                    className="object-contain"
++                  />
++                </div>
++                <p className="text-md sm:text-lg text-gray-800 font-semibold text-center group-hover:text-accent transition-colors duration-300">
+                   {skill.name}
+                 </p>
+               </div>
+-            ))}
+-          </div>
+-        ))}
+-      </div>
+-    </div>
++
++              {/* Tooltip on hover (desktop only) */}
++              <div className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300 bottom-[-10px] group-hover:bottom-2 left-0 right-0 text-center px-2 pointer-events-none hidden lg:block">
++                <div className="bg-gray-900/90 text-white text-[10px] leading-tight px-3 py-2 rounded-lg backdrop-blur-sm shadow-xl transform scale-95 group-hover:scale-100 transition-transform origin-bottom duration-300 mx-auto max-w-[140px]">
++                  {skill.description}
++                </div>
++              </div>
++            </div>
++          ))}
++        </div>
++      </div>
++    </section>
+   );
+ };
+Index: app/sections/home.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/home.tsx b/app/sections/home.tsx
+--- a/app/sections/home.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/home.tsx	(date 1772359492434)
+@@ -4,38 +4,66 @@
+ 
+ export const Home = () => {
+   return (
+-    <section className="flex flex-row justify-start items-start h-[calc(100vh-7rem)] w-full relative bg-[url('/home_bg.svg')] bg-cover bg-center bg-no-repeat">
+-      <div className="flex justify-center items-center w-1/2 h-full">
+-        <Image
+-          aria-hidden
+-          src="/about_dp.png"
+-          alt="profile pic"
+-          height={700}
+-          width={500}
+-          className="h-full object-cover rounded-lg pr-8"
+-        />
+-      </div>
+-      <div className="flex w-1/2">
+-        <div className="flex flex-col gap-7">
+-          <h1 className="text-5xl font-bold text-accent">
+-            Hello, I&#39;m Aniket
+-          </h1>
+-          <h2 className="text-7xl font-bold text-gray-700 leading-[1.1]">
+-            Professional <br /> Front-end Web <br />& Mobile App Developer
+-          </h2>
+-          <p className="text-xl text-gray-700">
+-            Currently based in Bangalore, with a focus on creating beautiful,
+-            responsive, and user-friendly applications. I love turning ideas
+-            into reality with code.
+-          </p>
+-          <div className="flex gap-4 justify-between">
+-            <Button text="Say Hello" />
+-            <div className="absolute bottom-8 right-2">
+-              <div className="scrolldown"></div>
++    <section className="flex flex-col-reverse lg:flex-row justify-between items-center min-h-[calc(100vh-7rem)] w-full relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100" id="home">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-20 left-10 w-96 h-96 bg-accent/15 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
++      <div className="absolute top-40 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
++      <div className="absolute -bottom-10 left-1/2 w-96 h-96 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
++
++      <div className="w-full lg:w-1/2 flex items-center justify-center relative z-10 p-8 lg:p-16">
++        <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl rounded-[3rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 transform rotate-3 scale-95 opacity-50"></div>
++        <div className="relative bg-white/60 backdrop-blur-2xl p-10 lg:p-14 rounded-[2.5rem] shadow-xl border border-white/80 w-full max-w-2xl transform transition-transform hover:-translate-y-2 duration-500">
++          <div className="flex flex-col gap-8">
++            <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent font-semibold text-sm tracking-wide uppercase w-max mb-2">
++              Welcome to my portfolio
++            </div>
++            <h1 className="text-5xl lg:text-5xl xl:text-6xl font-bold text-gray-800 leading-tight">
++              Hello, I&#39;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-500">Aniket</span>
++            </h1>
++            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-700 leading-snug">
++              Professional Front-end Web <br className="hidden lg:block" />& Mobile App Developer
++            </h2>
++            <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
++              Currently based in Bangalore, with a focus on creating beautiful,
++              responsive, and user-friendly applications. I love turning ideas
++              into reality with code.
++            </p>
++            <div className="flex flex-wrap gap-4 mt-4 items-center">
++              <div className="group relative">
++                <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-purple-500 rounded-full opacity-60 group-hover:opacity-100 transition duration-300 blur-sm"></div>
++                <div className="relative">
++                  <Button text="Say Hello" />
++                </div>
++              </div>
++              <a href="#projects" className="px-8 py-3.5 rounded-full font-semibold text-gray-700 bg-white border border-gray-200 hover:border-accent hover:text-accent shadow-sm hover:shadow-md transition-all duration-300">
++                View My Work
++              </a>
+             </div>
+           </div>
+         </div>
+       </div>
++
++      <div className="w-full lg:w-1/2 h-full flex justify-center items-center relative z-10 p-8">
++        <div className="relative w-full max-w-lg aspect-square">
++          {/* Subtle glow behind image */}
++          <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-purple-300/20 rounded-full filter blur-3xl transform scale-90"></div>
++          <Image
++            src="/about_dp.png"
++            alt="Aniket - Profile Picture"
++            fill
++            priority
++            className="object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-in-out"
++          />
++        </div>
++      </div>
++
++      {/* Scroll indicator */}
++      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
++        <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">Scroll</p>
++        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2">
++          <div className="w-1.5 h-2 bg-accent rounded-full animate-scrolldown"></div>
++        </div>
++      </div>
+     </section>
+   );
+ };
+Index: app/sections/services.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/services.tsx b/app/sections/services.tsx
+--- a/app/sections/services.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/services.tsx	(date 1772359362458)
+@@ -7,12 +7,12 @@
+       title: "Web Development",
+       description:
+         "Building responsive and user-friendly websites using modern technologies like React, Next.js, and Tailwind CSS.",
+-      icon: "contact.png",
++      icon: "contact.png", // keeping original icon path but can be updated later
+     },
+     {
+-      title: "Front-end Application Development",
++      title: "Front-end Development",
+       description:
+-        "Creating cross-platform mobile applications with React Native, ensuring a seamless user experience on both iOS and Android.",
++        "Creating beautiful, interactive user interfaces with pixel-perfect precision and smooth animations for robust web applications.",
+       icon: "logo.png",
+     },
+     {
+@@ -23,31 +23,53 @@
+     },
+   ];
+   return (
+-    <div className="flex flex-col">
+-      <SectionHeading
+-        headingPrimary="My"
+-        headingAccent="Expertise"
+-        subHeading="What I can do"
+-      />
+-      <div className="flex flex-row gap-8 mt-8 ">
+-        {data.map((item, index) => (
+-          <div
+-            key={index}
+-            className="flex flex-col gap-4 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+-          >
+-            <Image
+-              aria-hidden
+-              src={`/${item.icon}`}
+-              alt="image"
+-              height={70}
+-              width={70}
+-              className="object-cover"
+-            />
+-            <h2 className="text-3xl font-semibold">{item.title}</h2>
+-            <p className="text-lg text-gray-700">{item.description}</p>
+-          </div>
+-        ))}
+-      </div>
+-    </div>
++    <section className="w-full py-24 bg-gradient-to-tr from-gray-50 via-white to-gray-100 relative overflow-hidden" id="services">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-0 left-1/4 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
++      <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
++        <div className="mb-16">
++          <SectionHeading
++            headingPrimary="My"
++            headingAccent="Expertise"
++            subHeading="What I can do"
++          />
++        </div>
++
++        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
++          {data.map((item, index) => (
++            <div
++              key={index}
++              className="group flex flex-col items-start gap-6 p-8 md:p-10 bg-white/70 backdrop-blur-xl rounded-3xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
++            >
++              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-accent/5 to-transparent rounded-bl-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
++
++              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-100 shadow-sm flex items-center justify-center p-3 group-hover:border-accent/30 transition-colors">
++                <Image
++                  aria-hidden
++                  src={`/${item.icon}`}
++                  alt={item.title}
++                  fill
++                  className="object-contain p-3 group-hover:scale-110 transition-transform duration-300"
++                />
++              </div>
++
++              <div className="space-y-4 relative z-10">
++                <h2 className="text-2xl font-bold text-gray-800 group-hover:text-accent transition-colors duration-300">
++                  {item.title}
++                </h2>
++                <p className="text-base text-gray-600 leading-relaxed">
++                  {item.description}
++                </p>
++              </div>
++
++              {/* Decorative accent line */}
++              <div className="w-0 h-1 bg-gradient-to-r from-accent to-purple-500 rounded-full group-hover:w-16 transition-all duration-500 mt-auto pt-2"></div>
++            </div>
++          ))}
++        </div>
++      </div>
++    </section>
+   );
+ };
+Index: app/sections/experience.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/sections/experience.tsx b/app/sections/experience.tsx
+--- a/app/sections/experience.tsx	(revision e24a8d5a3897efc615b5aab2a91ee0a8be6c2975)
++++ b/app/sections/experience.tsx	(date 1772359407606)
+@@ -8,7 +8,7 @@
+       leftTitle: "Valtech Solutions Pvt. Ltd.",
+       leftTimeline: "Jun 2018 - Dec 2019",
+       leftDuration: "1 years",
+-      color: "bg-teal-500",
++      color: "bg-accent",
+       rightDescription:
+         "Designed and implemented responsive web interfaces using HTML, CSS, and JavaScript, enhancing user engagement.",
+     },
+@@ -17,7 +17,7 @@
+       leftTitle: "Primesoft IP Solutions Pvt. Ltd.",
+       leftTimeline: "Jan 2018 - May 2018",
+       leftDuration: "1 years",
+-      color: "bg-teal-500",
++      color: "bg-purple-500",
+       rightDescription:
+         "Assisted in developing a mobile application using React Native, contributing to the project’s success.",
+     },
+@@ -26,21 +26,29 @@
+       leftTitle: "Balihans Software Pvt. Ltd.",
+       leftTimeline: "Jun 2018 - Dec 2019",
+       leftDuration: "1 years",
+-      color: "bg-teal-500",
++      color: "bg-accent",
+       rightDescription:
+         "Single-handedly designing and developing the front-end part of the company's own product which is a web application software called Qnabu, leading career management and school automation tool.",
+     },
+   ];
+ 
+   return (
+-    <section className="experience">
+-      <SectionHeading
+-        headingPrimary="My Work"
+-        headingAccent="Experience"
+-        subHeading="Professional history"
+-      />
+-      <div className="mt-8 p-8">
+-        <Timelines timelines={experiences} />
++    <section className="w-full py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden" id="experience">
++      {/* Decorative background blur blobs */}
++      <div className="absolute top-20 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
++      <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/15 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
++
++      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
++        <div className="mb-16">
++          <SectionHeading
++            headingPrimary="My Work"
++            headingAccent="Experience"
++            subHeading="Professional history"
++          />
++        </div>
++        <div className="mt-8 max-w-5xl mx-auto">
++          <Timelines timelines={experiences} />
++        </div>
+       </div>
+     </section>
+   );

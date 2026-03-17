@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className="header flex flex-row gap-4 justify-between w-full pt-8 pb-8">
       <div className="flex justify-center">
-        <Image aria-hidden src="/logo.jpeg" alt="Logo" width={60} height={60} />
+        {/* <Image aria-hidden src="/logo.jpeg" alt="Logo" width={60} height={60} /> */}
       </div>
       <div className="flex justify-center">
         <nav className="flex items-center gap-10 font-medium text-gray-500 text-lg">

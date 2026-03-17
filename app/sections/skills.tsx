@@ -68,10 +68,8 @@ export const Skills = () => {
             headingPrimary="Technical"
             headingAccent="Skills"
             subHeading="My Stack"
+            description="A categorized overview of the technologies and tools I utilize to engineer scalable web and mobile applications."
           />
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto md:mx-0">
-            A categorized overview of the technologies and tools I utilize to engineer scalable web and mobile applications.
-          </p>
         </div>
 
         <motion.div
